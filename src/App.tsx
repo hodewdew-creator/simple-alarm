@@ -137,16 +137,21 @@ function AlarmCard({ item, onToggle, onDelete, onEditAvatar, onSelectAction }: {
           </button>
         </div>
 
-        <div className="flex items-baseline gap-2 text-sm sm:text-lg">
-          <span className="font-bold leading-none tracking-tight">{item.time}</span>
-          <button
-            onClick={(e) => { e.stopPropagation(); alert('여기서 설정 팝업(시/분, AM/PM, 반복주기 등)을 열 예정입니다.'); }}
-            className="text-[11px] sm:text-xs text-slate-800/90 bg-white/70 rounded-full px-1.5 py-0.5"
-            title="반복 설정"
-          >
-            {item.repeat}
-          </button>
-        </div>
+<div className="flex items-baseline gap-2">
+  <span className="font-bold leading-none tracking-tight text-base sm:text-xl">
+    {item.time}
+  </span>
+  <button
+    onClick={(e) => { 
+      e.stopPropagation(); 
+      alert('여기서 설정 팝업(시/분, AM/PM, 반복주기 등)을 열 예정입니다.'); 
+    }}
+    className="text-[11px] sm:text-xs text-slate-800/90 bg-white/70 rounded-full px-1.5 py-0.5"
+    title="반복 설정"
+  >
+    {item.repeat}
+  </button>
+</div>
 
         <div className="mt-0.5 flex flex-wrap gap-1 sm:gap-1.5">
           {item.actions.map((a) => (
